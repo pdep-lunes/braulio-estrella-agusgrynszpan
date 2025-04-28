@@ -17,3 +17,11 @@ bolaEspinosa :: Personaje -> Int
 bolaEspinosa miPersonaje personajeRival
   esMenorA 1000 (cantidadDeVida personajeRival) = 0
   otherwise = (cantidadDeVida personajeRival) - 1000
+
+espina :: Personaje
+espina = unPersonaje "Espina" (bolaEspinosa unPersonaje) (granadaDeEspinas unPersonaje) (tieneElSuperActivo unPersonaje) 4800 
+
+tieneElSuperActivo :: [Personaje] -> Bool
+tieneElSuperActivo unPersonaje = elem unPersonaje [espina]
+
+  
